@@ -41,8 +41,9 @@ tocando_em_uma_estatua = False
 coordenada_y_jogador = 300
 coordenada_x_jogador = 300
 
-def verificar_se_jogdor_esta_tocando_estatua(rect_jgador, rect_objeto1, rect_objeto2, rect_objeto3, rect_objeto4):
-    pass   
+def verificar_se_jogdor_esta_tocando_estatua(rect_jogador, rect_objeto1, rect_objeto2, rect_objeto3, rect_objeto4):
+    if rect_jogador.colliderect(rect_objeto1):
+        print("tocou")
 
 while rodando:
    
@@ -78,6 +79,9 @@ while rodando:
         imagem_atual_jogador = jogador_para_direita
     else:
         imagem_atual_jogador = jogador
+    
+    rect_jogador.topleft = (coordenada_x_jogador, coordenada_y_jogador)
+    verificar_se_jogdor_esta_tocando_estatua(rect_jogador, rect_objeto1, rect_objeto2, rect_objeto3, rect_objeto4)
 
     pygame.display.flip()
 
