@@ -25,6 +25,12 @@ jogador_para_direita = pygame.transform.scale(jogador_para_direita, (64, 64))
 
 imagem_atual_jogador = jogador
 
+rect_jogador = imagem_atual_jogador.get_rect()
+rect_objeto1 = objeto_1.get_rect()
+rect_objeto2 = objeto_2.get_rect()
+rect_objeto3 = objeto_3.get_rect()
+rect_objeto4 = objeto_4.get_rect()
+
 
 objeto_1_colocado = False
 
@@ -34,6 +40,9 @@ tocando_em_uma_estatua = False
 
 coordenada_y_jogador = 300
 coordenada_x_jogador = 300
+
+def verificar_se_jogdor_esta_tocando_estatua(rect_jgador, rect_objeto1, rect_objeto2, rect_objeto3, rect_objeto4):
+    pass   
 
 while rodando:
    
