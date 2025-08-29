@@ -18,6 +18,7 @@ objeto_4 = pygame.image.load('fases/ViniParado1.png').convert_alpha()
 objeto_4 = pygame.transform.scale(objeto_4, (128, 128))
 
 jogador = pygame.image.load('fases/AlmaParado.png').convert_alpha()
+
 jogador = pygame.transform.scale(jogador, (64, 64))
 
 jogador_para_direita = pygame.image.load('fases/AlmaCorrendo1.png').convert_alpha()
@@ -30,6 +31,8 @@ rect_objeto1 = objeto_1.get_rect()
 rect_objeto2 = objeto_2.get_rect()
 rect_objeto3 = objeto_3.get_rect()
 rect_objeto4 = objeto_4.get_rect()
+
+teste_quadrado = pygame.Rect(500, 100, 250, 250)
 
 
 objeto_1_colocado = False
@@ -44,6 +47,10 @@ coordenada_x_jogador = 300
 def verificar_se_jogdor_esta_tocando_estatua(rect_jogador, rect_objeto1, rect_objeto2, rect_objeto3, rect_objeto4):
     if rect_jogador.colliderect(rect_objeto1):
         print("tocou")
+
+def verificar_tocou_quadrado(rect_jogador, rect_quadrado):
+    if rect_jogador.colliderect(rect_quadrado):
+        print("tocou1")
 
 while rodando:
    
@@ -80,8 +87,11 @@ while rodando:
     else:
         imagem_atual_jogador = jogador
     
+    pygame.draw.rect(tela, "green", teste_quadrado)
+
     rect_jogador.topleft = (coordenada_x_jogador, coordenada_y_jogador)
     verificar_se_jogdor_esta_tocando_estatua(rect_jogador, rect_objeto1, rect_objeto2, rect_objeto3, rect_objeto4)
+    verificar_tocou_quadrado(rect_jogador, teste_quadrado)
 
     pygame.display.flip()
 
